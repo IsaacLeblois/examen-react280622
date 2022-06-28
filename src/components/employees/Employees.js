@@ -34,7 +34,9 @@ const Employees = () => {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(envio)
-        }).then(res => res.json())
+        }).then(res => res.json()).finally(
+            alert('Post successfully. Please reload this site.')
+        )
     }
 
     const [busqueda, setBusqueda] = useState('')

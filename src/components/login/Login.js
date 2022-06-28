@@ -7,28 +7,28 @@ const Login = () => {
 
     const Formulario = () => {
         return (
-            <div class="loginCont">
-                <div class="advspace">
+            <div className="loginCont">
+                <div className="advspace">
 
                 </div>
-                <div class="signUpForm">
+                <div className="signUpForm">
                     <form>
                         <h4>Log in</h4>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder='Email' onPaste={(e) => e.preventDefault()} onCopy={(e) => e.preventDefault()} />
+                        <div className="form-floating mb-3">
+                            <input type="email" className="form-control" id="exampleInputEmail1" placeholder='Email' onPaste={(e) => e.preventDefault()} onCopy={(e) => e.preventDefault()} />
                             <label for="exampleInputEmail1">Email</label>
                         </div>
-                        <div class="form-floating">
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onPaste={(e) => e.preventDefault()} onCopy={(e) => e.preventDefault()} />
+                        <div className="form-floating">
+                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" onPaste={(e) => e.preventDefault()} onCopy={(e) => e.preventDefault()} />
                             <label for="exampleInputPassword1">Password</label>
                         </div>
-                        <div class="signbtns">
-                            <a class="btn btn-secondary m-3 w-25" onClick={validationLogin}>Sing in</a>
-                            <a class="btn btn-danger m-3 w-25">Sign up</a>
+                        <div className="signbtns">
+                            <button className="btn btn-secondary m-3 w-25" onClick={validationLogin}>Sing in</button>
+                            <button className="btn btn-danger m-3 w-25" disabled>Sign up</button>
                         </div>
                     </form>
                 </div>
-                <div class="advspace">
+                <div className="advspace">
 
                 </div>
             </div>
