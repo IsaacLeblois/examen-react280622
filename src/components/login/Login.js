@@ -7,32 +7,40 @@ const Login = () => {
 
     const Formulario = () => {
         return (
-            <div>
-                <h1>LOGIN</h1>
-                <div className='loginCont'>
+            <div class="loginCont">
+                <div class="advspace">
+
+                </div>
+                <div class="signUpForm">
                     <form>
-                        <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label">Email address</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onPaste={(e)=>e.preventDefault()} onCopy={(e)=>e.preventDefault()}/>
-                            <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                        <h4>Log in</h4>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder='Email' onPaste={(e) => e.preventDefault()} onCopy={(e) => e.preventDefault()} />
+                            <label for="exampleInputEmail1">Email</label>
                         </div>
-                        <div className="mb-3">
-                            <label for="exampleInputPassword1" className="form-label">Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" onPaste={(e)=>e.preventDefault()} onCopy={(e)=>e.preventDefault()}/>
-                        </div><br></br>
-                        <button className="btn btn-primary w-100" onClick={validationLogin}>Log in</button>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onPaste={(e) => e.preventDefault()} onCopy={(e) => e.preventDefault()} />
+                            <label for="exampleInputPassword1">Password</label>
+                        </div>
+                        <div class="signbtns">
+                            <a class="btn btn-secondary m-3 w-25" onClick={validationLogin}>Sing in</a>
+                            <a class="btn btn-danger m-3 w-25">Sign up</a>
+                        </div>
                     </form>
+                </div>
+                <div class="advspace">
+
                 </div>
             </div>
         )
     }
-    
+
     const validationLogin = () => {
         const emailInp = document.getElementById('exampleInputEmail1')
         const passInp = document.getElementById('exampleInputPassword1')
-        if(emailInp.value) {
-            if(passInp.value){
-                    ctx.setLoggedIn(true)
+        if (emailInp.value) {
+            if (passInp.value) {
+                ctx.setLoggedIn(true)
             } else {
                 alert('Debes ingresar tu contraseña.')
             }
@@ -43,14 +51,14 @@ const Login = () => {
 
     const YaLogueado = () => {
         return (
-            <div>
-                <h1>¡You have logged in!</h1>
+            <div className='d-flex flex-column align-items-center landingCont'>
+                <h1>You have logged in.</h1>
             </div>
         )
     }
 
     const DinamycRender = () => {
-        if(ctx.loggedIn === true) {
+        if (ctx.loggedIn === true) {
             return <YaLogueado />
         } else {
             return <Formulario />
