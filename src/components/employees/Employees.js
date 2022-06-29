@@ -67,8 +67,8 @@ const Employees = () => {
     const dateFormat = (date) => {
         const startFormat = new Date(parseInt(date))
         const year = startFormat.getFullYear()
-        const month = startFormat.getMonth()+1
-        const day = startFormat.getDate()+1
+        const month = startFormat.getMonth()
+        const day = startFormat.getDay()
         return (
             <p>{day}/{month}/{year}</p>
         )
