@@ -13,11 +13,11 @@ const Employees = () => {
         fetchApi()
     }, [])
 
-    let min = [0, 10, 20, 30, 40, 50, 60], max = [10, 20, 30, 40, 50, 60, 70]
+    let min = [0, 10, 20, 30, 40, 50, 60, 70], max = [10, 20, 30, 40, 50, 60, 70, 80]
 
     const [pag, setPag] = useState(1)
 
-    if (pag > 6) {
+    if (pag > 7) {
         setPag(1)
     } if (pag < 1) {
         setPag(7)
@@ -99,7 +99,7 @@ const Employees = () => {
                                     empleados.slice(min[pag - 1], max[pag - 1]).map((e) => {
                                         return (
                                             <tr>
-                                                <td scope='row'>{e.id}</td>
+                                                <td>{e.id}</td>
                                                 <td>{e.name}</td>
                                                 <td>{e.last_name}</td>
                                                 <td>{dateFormat(e.birthday)}</td>
@@ -109,14 +109,14 @@ const Employees = () => {
                             }
 
                             <tr>
-                                <td scope='row'>
+                                <td>
                                     Pagina
                                 </td>
                                 <td>
                                     <button className='btn btn-danger' onClick={() => setPag(pag - 1)}>Prev page</button>
                                 </td>
                                 <td>
-                                    <span>  Page: {pag} of 6 </span>
+                                    <span>  Page: {pag} of 7 </span>
                                 </td>
                                 <td>
                                     <button className='btn btn-success' onClick={() => setPag(pag + 1)}>Next Page</button>
@@ -131,15 +131,15 @@ const Employees = () => {
                     <h2>Form</h2>
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Name</label>
-                        <input type="text" className="form-control" id="exampleInputEmail1" onChange={(e) => setName(e.target.value)} />
+                        <input type="text" className="form-control" id="nameInp" onChange={(e) => setName(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <label for="exampleInputPassword1" className="form-label">Lastname</label>
-                        <input type="text" className="form-control" id="exampleInputPassword1" onChange={(e) => setLast_name(e.target.value)} />
+                        <input type="text" className="form-control" id="lastInp" onChange={(e) => setLast_name(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <label for="exampleInputPassword1" className="form-label">Birthday</label>
-                        <input type="date" className="form-control" id="exampleInputPassword1" onChange={(e) => setBirthday(e.target.value)} />
+                        <input type="date" className="form-control" id="birthInp" onChange={(e) => setBirthday(e.target.value)} />
                     </div>
                     <button type='submit' className="btn btn-primary w-100">Subir</button>
                 </form>
