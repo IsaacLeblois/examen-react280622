@@ -80,8 +80,8 @@ const Employees = () => {
                         placeholder="Search by name"
                         onChange={handleChange}
                     />
-                    <button className='btn btn-success m-1'>Buscar</button>
-                    <button className='btn btn-success m-1' onClick={recargar}>Reiniciar</button>
+                    <button className='btn btn-primary m-1'>Search</button>
+                    <button className='btn btn-warning m-1' onClick={recargar}>Reset</button>
                 </div>
                 <div>
                     <table className='table tableCont'>
