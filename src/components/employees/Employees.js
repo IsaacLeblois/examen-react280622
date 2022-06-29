@@ -35,6 +35,7 @@ const Employees = () => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(envio)
         }).then(res => res.json()).finally(
+            limpiarFormulario(),
             alert('Post successfully. Please reload this site.')
         )
     }
@@ -58,6 +59,10 @@ const Employees = () => {
     const recargar = () => {
         window.location.reload()
     }
+
+    const limpiarFormulario = () => {
+        document.getElementById("miForm").reset();
+      }
 
     const dateFormat = (date) => {
         const startFormat = new Date(parseInt(date))
@@ -127,7 +132,7 @@ const Employees = () => {
                 </div>
             </div>
             <div>
-                <form onSubmit={handleSubmit} className='apiForm'>
+                <form onSubmit={handleSubmit} className='apiForm' id='miForm'>
                     <h2>Form</h2>
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Name</label>
