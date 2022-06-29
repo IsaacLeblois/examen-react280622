@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import './login.css'
 import UserContext from '../../context/UserContext'
+import { Navigate } from 'react-router-dom'
 
 const Login = () => {
     const ctx = useContext(UserContext)
@@ -38,14 +39,14 @@ const Login = () => {
     const validationLogin = () => {
         const emailInp = document.getElementById('exampleInputEmail1')
         const passInp = document.getElementById('exampleInputPassword1')
-        if (emailInp.value) {
-            if (passInp.value) {
+        if (emailInp.value === "admin@admin.com") {
+            if (passInp.value === "12345678") {
                 ctx.setLoggedIn(true)
             } else {
-                alert('Debes ingresar tu contraseña.')
+                alert('Wrong password')
             }
         } else {
-            alert('Debes ingresar tu email.')
+            alert('Unknown user')
         }
     }
 
