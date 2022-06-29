@@ -100,7 +100,7 @@ const Employees = () => {
                         </thead>
                         <tbody>
                             {
-                                !empleados ? 'CARGANDO...' :
+                                !empleados ? 'LOADING...' :
                                     empleados.slice(min[pag - 1], max[pag - 1]).map((e) => {
                                         return (
                                             <tr>
@@ -115,7 +115,7 @@ const Employees = () => {
 
                             <tr>
                                 <td>
-                                    Pagina
+                                    Pagination
                                 </td>
                                 <td>
                                     <button className='btn btn-danger' onClick={() => setPag(pag - 1)}>Prev page</button>

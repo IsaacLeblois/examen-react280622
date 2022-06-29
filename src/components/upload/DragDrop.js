@@ -32,8 +32,8 @@ function DragDrop() {
         <form className="fileUpload" method="get">
             <FileUploader handleChange={setSelectedImage} name="file" types={fileTypes} classes='drop_area' multiple={true} />
             <div className="previewArea">
-                <p>Imagenes cargadas: {selectedImage ? selectedImage.length : 0}</p>
-                <p>Imagen en vista previa: {selectedImage ? iPre+1 : 0}</p>
+                <p>Uploaded images: {selectedImage ? selectedImage.length : 0}</p>
+                <p>Preview image: {selectedImage ? iPre+1 : 0}</p>
                 {
                     selectedImage && (
                         <div className="controles">
