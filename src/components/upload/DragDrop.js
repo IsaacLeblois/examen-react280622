@@ -22,6 +22,10 @@ function DragDrop() {
         alert('Upload successfully')
     }
   }
+
+  const recargar = () => {
+    window.location.reload()
+    }
   
   return (
     <div>
@@ -33,18 +37,21 @@ function DragDrop() {
                 {
                     selectedImage && (
                         <div className="controles">
-                            <button type="button" onClick={() => setIPre(iPre-1)}>Prev</button>
+                            <button className="btn btn-info" type="button" onClick={() => setIPre(iPre-1)}>Prev</button>
                             <img
                             src={URL.createObjectURL(selectedImage[iPre])}
                             className='mainPreview'
                             alt="preview"
                             />
-                            <button type="button" onClick={() => setIPre(iPre+1)}>Next</button>
+                            <button className="btn btn-info" type="button" onClick={() => setIPre(iPre+1)}>Next</button>
                         </div>
                     )
                 }
             </div>
-            <button className="btn btn-success" onClick={handleUpload}>Upload</button>
+            <div className="d-flex">
+                <button className="btn btn-success m-1" onClick={handleUpload}>Upload</button>
+                <button className="btn btn-danger m-1" onClick={recargar}>Reset</button>
+            </div>
         </form>
     </div>
   );
