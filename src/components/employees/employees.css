@@ -1,27 +1,8 @@
 .employeesCont {
-    height: 30rem;
+    margin: 20px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-
-.mapList {
-    height: 20rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-}
-
-.item {
-    border: solid;
-    margin: 2px;
-    width: 20%;
-    border-radius: 10px;
-    background-color: blue;
-    color: white;
-    list-style: none;
-    text-align: start;
 }
 
 .nid {
@@ -30,4 +11,9 @@
 
 .apiForm {
     margin: 4% 20%;
+}
+
+.tableCont {
+    margin: 20px;
+    text-align: center;
 }

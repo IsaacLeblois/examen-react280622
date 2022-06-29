@@ -59,6 +59,16 @@ const Employees = () => {
         window.location.reload()
     }
 
+    const dateFormat = (date) => {
+        const startFormat = new Date(parseInt(date))
+        const year = startFormat.getFullYear()
+        const month = startFormat.getMonth()
+        const day = startFormat.getDay()
+        return (
+            <p>{day}/{month}/{year}</p>
+        )
+    }
+
     return (
         <div className='text-center'>
             <h1>Pagination & Search</h1>
@@ -73,18 +83,47 @@ const Employees = () => {
                     <button className='btn btn-success m-1'>Buscar</button>
                     <button className='btn btn-success m-1' onClick={recargar}>Reiniciar</button>
                 </div>
-                <div className='mapList'>
-                    {
-                        !empleados ? 'CARGANDO...' :
-                            empleados.slice(min[pag - 1], max[pag - 1]).map((e) => {
-                                return <li className='item'><span className='nid'>{e.id}</span> {e.name}</li>
-                            })
-                    }
-                </div>
                 <div>
-                    <button className='btn btn-danger' onClick={() => setPag(pag - 1)}>Prev page</button>
-                    <span>  Page: {pag} of 6 </span>
-                    <button className='btn btn-success' onClick={() => setPag(pag + 1)}>Next Page</button>
+                    <table className='table tableCont'>
+                        <thead className='thead-dark'>
+                            <tr>
+                                <th scope='col'>#</th>
+                                <th scope='col'>Name</th>
+                                <th scope='col'>Lastname</th>
+                                <th scope='col'>Birthday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                !empleados ? 'CARGANDO...' :
+                                    empleados.slice(min[pag - 1], max[pag - 1]).map((e) => {
+                                        return (
+                                            <tr>
+                                                <td scope='row'>{e.id}</td>
+                                                <td>{e.name}</td>
+                                                <td>{e.last_name}</td>
+                                                <td>{dateFormat(e.birthday)}</td>
+                                            </tr>
+                                        )    
+                                    })
+                            }
+
+                            <tr>
+                                <td scope='row'>
+                                    Pagina
+                                </td>
+                                <td>
+                                    <button className='btn btn-danger' onClick={() => setPag(pag - 1)}>Prev page</button>
+                                </td>
+                                <td>
+                                    <span>  Page: {pag} of 6 </span>
+                                </td>
+                                <td>
+                                    <button className='btn btn-success' onClick={() => setPag(pag + 1)}>Next Page</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div>

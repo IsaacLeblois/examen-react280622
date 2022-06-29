@@ -23,7 +23,7 @@ const Login = () => {
                             <label for="exampleInputPassword1">Password</label>
                         </div>
                         <div className="signbtns">
-                            <button className="btn btn-secondary m-3 w-25" onClick={validationLogin}>Sing in</button>
+                            <button className="btn btn-secondary m-3 w-25" onClick={validationLogin}>Sign in</button>
                             <button className="btn btn-danger m-3 w-25" disabled>Sign up</button>
                         </div>
                     </form>
