@@ -62,7 +62,7 @@ const Employees = () => {
 
     const limpiarFormulario = () => {
         document.getElementById("miForm").reset();
-      }
+    }
 
     const dateFormat = (date) => {
         const startFormat = new Date(parseInt(date))
