@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import './login.css'
 import UserContext from '../../context/UserContext'
-import { Navigate } from 'react-router-dom'
 
 const Login = () => {
     const ctx = useContext(UserContext)
