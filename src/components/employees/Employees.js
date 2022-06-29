@@ -136,15 +136,15 @@ const Employees = () => {
                     <h2>Form</h2>
                     <div className="mb-3">
                         <label for="exampleInputEmail1" className="form-label">Name</label>
-                        <input type="text" className="form-control" id="nameInp" onChange={(e) => setName(e.target.value)} />
+                        <input type="text" className="form-control" id="nameInp" onChange={(e) => setName(e.target.value)} required/>
                     </div>
                     <div className="mb-3">
                         <label for="exampleInputPassword1" className="form-label">Lastname</label>
-                        <input type="text" className="form-control" id="lastInp" onChange={(e) => setLast_name(e.target.value)} />
+                        <input type="text" className="form-control" id="lastInp" onChange={(e) => setLast_name(e.target.value)} required/>
                     </div>
                     <div className="mb-3">
                         <label for="exampleInputPassword1" className="form-label">Birthday</label>
-                        <input type="date" className="form-control" id="birthInp" onChange={(e) => setBirthday(e.target.value)} />
+                        <input type="date" className="form-control" id="birthInp" onChange={(e) => setBirthday(e.target.value)} required/>
                     </div>
                     <button type='submit' className="btn btn-primary w-100">Subir</button>
                 </form>
